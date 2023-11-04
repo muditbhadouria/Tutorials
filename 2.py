@@ -1,3 +1,6 @@
+import csv
+
+
 class Item:
     # Class level attribute
     pay_rate = 0.8  # Pay rate after 20% discount
@@ -23,6 +26,30 @@ class Item:
         # pay_rate should be access from instance level so that we can use instance attributes when they are provided
         self.price = self.price * self.pay_rate
 
+    @classmethod
+    def instantiate_from_csv(cls):
+        with open('items.csv', 'r') as f:
+            reader = csv.DictReader(f)
+            items = list(reader)
+
+        for item in items:
+            cls(
+                name=item.get('name'),
+                price=float(item.get('price')),
+                quantity=int(item.get('quantity')),
+            )
+
+    @staticmethod
+    def is_integer(num):
+        # We will count out the floats that are point zero
+        if isinstance(num, float):
+            # Count out the floats that are point zero
+            print(num)
+            return num.is_integer()
+        elif isinstance(num, int):
+            return True
+        return False
+
     def __repr__(self):
         return f'Item(\'{self.name}\', {self.price}, {self.quantity})'
 
@@ -40,13 +67,10 @@ class Item:
 # item1.apply_discount()
 # print(item1.price)
 
-item1 = Item("Phone", 100, 1)
-item2 = Item("Laptop", 1000, 3)
-item3 = Item("Cable", 10, 5)
-item4 = Item("Mouse", 50, 5)
-item5 = Item("Keyboard", 75, 5)
-
 # for instance in Item.all:
 #     print(instance.name)
 
-print(Item.all)
+# Item.instantiate_from_csv()
+# print(Item.all)
+
+print(Item.is_integer(7.9))
