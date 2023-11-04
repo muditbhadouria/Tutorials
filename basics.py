@@ -44,14 +44,13 @@ class Item:
         # We will count out the floats that are point zero
         if isinstance(num, float):
             # Count out the floats that are point zero
-            print(num)
             return num.is_integer()
         elif isinstance(num, int):
             return True
         return False
 
     def __repr__(self):
-        return f'Item(\'{self.name}\', {self.price}, {self.quantity})'
+        return f'{self.__class__.__name__}(\'{self.name}\', {self.price}, {self.quantity})'
 
 
 # item1 = Item('Phone', 99.99, 5)
@@ -73,4 +72,4 @@ class Item:
 # Item.instantiate_from_csv()
 # print(Item.all)
 
-print(Item.is_integer(7.9))
+# print(Item.is_integer(7.9))
