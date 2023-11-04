@@ -1,4 +1,4 @@
-from basics import Item
+from item import Item
 
 
 class Phone(Item):
@@ -8,8 +8,8 @@ class Phone(Item):
 
 
 # Item.instantiate_from_csv()
-phone1 = Phone('Iphone 12', 999.99, 10)
-phone2 = Phone('Iphone 14', 1299.99, 100)
-print(phone1.calculate_total_price())
-# print(Phone.all)
-print(Item.all)
+# phone1 = Phone('Iphone 12', 999.99, 10)
+# phone2 = Phone('Iphone 14', 1299.99, 100)
+# print(phone1.calculate_total_price())
+# # print(Phone.all)
+# print(Item.all)

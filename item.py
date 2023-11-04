@@ -6,13 +6,13 @@ class Item:
     pay_rate = 0.8  # Pay rate after 20% discount
     all = []
 
-    def __init__(self, name: str, price: float, quantity: 0):
+    def __init__(self, name: str, price: float, quantity=0):
         # Run validations on received arguments
         assert price >= 0, f'Price {price} is not greater than or equal to zero'
         assert quantity >= 0, f'Quantity {quantity} is not greater than or equal to zero'
 
         # Assign to self object
-        self.name = name
+        self.__name = name
         self.price = price
         self.quantity = quantity
 
@@ -52,6 +52,17 @@ class Item:
     def __repr__(self):
         return f'{self.__class__.__name__}(\'{self.name}\', {self.price}, {self.quantity})'
 
+    @property
+    # Property decorator = Read-Only attribute
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, value):
+        self.__name = value
+
+
+# from item import Item
 
 # item1 = Item('Phone', 99.99, 5)
 # item2 = Item('Laptop', 999.99, 2)
