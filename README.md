@@ -1,3 +1,3 @@
-# Object Oriented Programming with Python - Full Course for Beginners
+# Intermediate Python Programming Course
 
-Link - https://www.youtube.com/watch?v=Ej_02ICOIgs&list=PLWKjhJtqVAbnqBxcdjVGgT3uVR10bzTEB&index=4
+Link - https://www.youtube.com/watch?v=HGOBQPFzWKo&list=PLWKjhJtqVAbnqBxcdjVGgT3uVR10bzTEB&index=2
